@@ -1,0 +1,32 @@
+{
+  "name": "org-controller-backend",
+  "version": "1.0.0",
+  "description": "Multi-tenant organization hierarchy, task logging, CV import, and payroll API",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "migrate": "psql \"$DATABASE_URL\" -f src/db/schema.sql",
+    "seed": "psql \"$DATABASE_URL\" -f src/db/seed.sql"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.11.5",
+    "uuid": "^9.0.1",
+    "zod": "^3.23.8",
+    "@google/generative-ai": "^0.14.0",
+    "@aws-sdk/client-s3": "^3.600.0",
+    "@aws-sdk/s3-request-presigner": "^3.600.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
